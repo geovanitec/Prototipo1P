@@ -2,6 +2,17 @@ Drop database multibodegas;
 create database multibodegas;
 use multibodegas;
 
+create table USUARIOS (
+
+NombreUsuario varchar (60) not null,
+Pass varchar (60) not null
+
+)engine=InnoDB Default charset = Latin1 ;
+
+insert into USUARIOS(NombreUsuario,Pass) values ("123","123");
+
+
+
 create table Productos(
 	ID_Producto varchar (10) primary key,
     Nombre_Producto varchar(35),
@@ -75,3 +86,28 @@ create table Venta_Detalle(
  
 )engine = InnoDB default charset=latin1;
 
+insert into Productos
+(ID_Producto,Nombre_Producto,Descripcion,Precio_Producto)
+values
+(1,"Jabon","100"),
+(2,"Shampoo", "200");
+
+
+
+insert into Inventarios
+(ID_Inventario,Nombre,Estatus)
+values
+(1,"Conta","t"),
+
+
+insert into Cuentas_Corrientes
+(ID_Cuenta,Tipo,Saldo)
+values
+(1,"Cuenta1","111"),
+(2,"Cuenta1","222");
+
+insert into Modulo_Informes
+(ID_Informe,Impuesto,Estatus,Id_Cuenta)
+values
+(1,"111","A",1),
+(2,"222","I",2);
